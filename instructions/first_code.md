@@ -291,7 +291,7 @@ def test_factorial():
     from my_pkg.trial import factorial
 
     assert 24 == factorial(4)
-    assert 6 == factorial(3.0)
+    assert 6 == factorial(3)
     assert 1 == factorial(0)
     assert 1 == factorial(-1)
 
@@ -315,7 +315,7 @@ have tests we can go back to our function and finish writing the code:
     if not isinstance(n,int):
         raise ValueError("The input to factorial must be an integer.")
 
-    if n < 0:
+    if n <= 0:
         fact = 1
     else:
         fact = n
